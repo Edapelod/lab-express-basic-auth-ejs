@@ -1,8 +1,9 @@
 const router = require("express").Router();
 
-/* GET profile page */
+
 router.get("/", (req, res, next) => {
-  res.render("profile");
+  res.render("profile", { userConnected: req.session.user });
+  console.log("/profile",req.session)
 });
 
 module.exports = router;
